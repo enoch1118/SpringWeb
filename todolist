@@ -1,0 +1,44 @@
+:lombok done
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.4</version>
+    <scope>provided</scope><-컴파일 영역
+</dependency>
+
+세팅에서 플러긴 롬복
+enable annotation
+Build, Execution, Deployment > Compiler > Annotation Processings
+https://gmlwjd9405.github.io/2018/11/29/intellij-lombok.html
+
+Todo:자바로 설정 p42
+:의존성 주입 테스트 done
+
+:log4j 세팅 done
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.1</version>
+    <scope>test</scope>
+</dependency>
+은 테스트 전용
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.12</version>
+</dependency>
+은 로그 4j
+
+리소스에 log4j.xml 생성을해야 오류가 안나옴
+
+
+어노테이션 정리
+lombok:@setter @data @log4j
+spring:@autowired @component
+junit:@runwith contextconfiguration @test
+
+: jdbc설정 done
+프로젝트 스트럭쳐->라이브러리->플러스->자바->jdbc
+
+: jdbc test done
+Todo: 커넥션 풀 설정.
