@@ -41,4 +41,4 @@ junit:@runwith contextconfiguration @test
 프로젝트 스트럭쳐->라이브러리->플러스->자바->jdbc
 
 : jdbc test done
-Todo: 커넥션 풀 설정.
+: 커넥션 풀 설정.

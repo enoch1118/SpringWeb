@@ -2,16 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--히카리 설정 -->
-    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"/>
-        <property name="username" value="student"/>
-        <property name="password" value="1234"/>
-    </bean>
-    <!--    히카리 함수 설정 //데이터소스-->
-    <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
-        <constructor-arg ref="hikariConfig"/>
+    <!--    &lt;!&ndash;    히카리 설정 &ndash;&gt;-->
+    <!--    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">-->
+    <!--        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>-->
+    <!--        <property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"/>-->
+    <!--        <property name="username" value="student"/>-->
+    <!--        <property name="password" value="1234"/>-->
+    <!--    </bean>-->
+    <!--    &lt;!&ndash;    히카리 함수 설정 //데이터소스&ndash;&gt;-->
+    <!--    <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">-->
+    <!--        <constructor-arg ref="hikariConfig"/>-->
+    <!--    </bean>-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <!--        10mb-->
+        <property name="maxUploadSize" value="104857560"/>
+        <property name="maxUploadSizePerFile" value="2097152"/>
+        <property name="maxInMemorySize" value="10485756"/>
+        <property name="uploadTempDir" value="file:/Users/emma/enoch/upload/"/>
     </bean>
 </beans>
 
